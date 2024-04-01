@@ -1,5 +1,6 @@
 package com.locnht.SpringDataJPA.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,5 +19,6 @@ public class Department {
     private String name;
 
     @OneToMany(mappedBy = "department")
+    @JsonManagedReference // parent level
     private List<Employee> employees;
 }
